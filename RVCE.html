@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+	<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-firestore.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDa7Z9LVH8b7RqPeHZwovnh8uwNKtn6fcE",
+    authDomain: "sahajya-app.firebaseapp.com",
+    databaseURL: "https://sahajya-app.firebaseio.com",
+    projectId: "sahajya-app",
+    storageBucket: "sahajya-app.appspot.com",
+    messagingSenderId: "965553655527"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script type="text/javascript">
+	
+ function get_vol(){
+    var db = firebase.firestore();     
+    db.collection("Volunteers").get().then(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+        // doc.data() is never undefined for query doc snapshots
+       var fn=doc.data().name;
+        var a=doc.data().age;
+        var g=doc.data().gender;
+        var c=doc.data().contact;
+        var loc = doc.data().camp_preference;
+      var table1 = document.getElementById("volunteer_1_tbl");
+      var table2 = document.getElementById("volunteer_2_tbl");
+      var table3 = document.getElementById("volunteer_3_tbl");
+      var table4 = document.getElementById("volunteer_4_tbl");
+                if(loc == "Relief Camp 1" ){
+            
+                  	var newRow = table1.insertRow(table1.rows.length/2+1);
+                  
+                  // add cells to the row
+                  	var cel1 = newRow.insertCell(0);
+                  	var cel2 = newRow.insertCell(1);
+                  	var cel3 = newRow.insertCell(2);
+                  	var cel4 = newRow.insertCell(3);
+                  
+                  // add values to the cells
+                  	cel1.innerHTML = fn;
+                  	cel2.innerHTML = a;
+                  	cel3.innerHTML = g;
+                  	cel4.innerHTML =c;
+                  }
+                  if(loc == "Relief Camp 2" ){
+            
+                  	var newRow = table2.insertRow(table2.rows.length/2+1);
+                  
+                  // add cells to the row
+                  	var cel1 = newRow.insertCell(0);
+                  	var cel2 = newRow.insertCell(1);
+                  	var cel3 = newRow.insertCell(2);
+                  	var cel4 = newRow.insertCell(3);
+                  
+                  // add values to the cells
+                  	cel1.innerHTML = fn;
+                  	cel2.innerHTML = a;
+                  	cel3.innerHTML = g;
+                  	cel4.innerHTML =c;
+                  }
+                  if(loc == "Relief Camp 3" ){
+            
+                  	var newRow = table3.insertRow(table3.rows.length/2+1);
+                  
+                  // add cells to the row
+                  	var cel1 = newRow.insertCell(0);
+                  	var cel2 = newRow.insertCell(1);
+                  	var cel3 = newRow.insertCell(2);
+                  	var cel4 = newRow.insertCell(3);
+                  
+                  // add values to the cells
+                  	cel1.innerHTML = fn;
+                  	cel2.innerHTML = a;
+                  	cel3.innerHTML = g;
+                  	cel4.innerHTML =c;
+                  }
+                  if(loc == "Relief Camp 4" ){
+            
+                  	var newRow = table4.insertRow(table4.rows.length/2+1);
+                  
+                  // add cells to the row
+                  	var cel1 = newRow.insertCell(0);
+                  	var cel2 = newRow.insertCell(1);
+                  	var cel3 = newRow.insertCell(2);
+                  	var cel4 = newRow.insertCell(3);
+                  
+                  // add values to the cells
+                  	cel1.innerHTML = fn;
+                  	cel2.innerHTML = a;
+                  	cel3.innerHTML = g;
+                  	cel4.innerHTML =c;
+                  }	
+
+
+
+    });
+});
+}
+</script>
+
+
+
+<script type="text/javascript">
+	
+ function get_rc(){
+    var db = firebase.firestore();     
+    db.collection("Relief_Camp").get().then(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+        // doc.data() is never undefined for query doc snapshots
+       var fn=doc.data().name;
+        var a=doc.data().latitude;
+        var g=doc.data().longitude;
+        var c=doc.data().contact;
+        var table = document.getElementById("rc_menu");
+        var newRow = table.insertRow(table.rows.length/2+1);
+                  
+                  // add cells to the row
+                  	var cel1 = newRow.insertCell(0);
+                  	var cel2 = newRow.insertCell(1);
+                  	var cel3 = newRow.insertCell(2);
+                  	var cel4 = newRow.insertCell(3);
+                  
+                  // add values to the cells
+                  	cel1.innerHTML = fn;
+                  	cel2.innerHTML = a;
+                  	cel3.innerHTML = g;
+                  	cel4.innerHTML =c;
+
+    });
+});
+}
+</script>
+
+
+
+
+
+
+
+<script type="text/javascript">
+	
+ function get_dist(){
+ 	var db = firebase.firestore();     
+    db.collection("Emergency Help").get().then(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+        // doc.data() is never undefined for query doc snapshots
+//         Airlift "no"
+// Contact "+44918840917375"
+// Emergency "Thjkkk"
+// Latitude "12.923652764846214"
+// Longitude "77.50202202182295" 
+       var fn=doc.data().Emergency;
+        var a=doc.data().Latitude;
+        var g=doc.data().Longitude;
+        var c=doc.data().Contact;
+        var x=doc.data().Airlift;
+        var loc = doc.data().Distress_Area;
+      var table1 = document.getElementById("dist_1_tbl");
+      var table2 = document.getElementById("dist_2_tbl");
+      var table3 = document.getElementById("dist_3_tbl");
+      var table4 = document.getElementById("dist_4_tbl");
+                if(loc == "DistressArea1" ){
+            
+                  	var newRow = table1.insertRow(table1.rows.length/2+1);
+                  
+                  // add cells to the row
+                  	var cel1 = newRow.insertCell(0);
+                  	var cel2 = newRow.insertCell(1);
+                  	var cel3 = newRow.insertCell(2);
+                  	var cel4 = newRow.insertCell(3);
+                  	var cel5 = newRow.insertCell(4)
+                  
+                  // add values to the cells
+                  	cel1.innerHTML = fn;
+                  	cel2.innerHTML = a;
+                  	cel3.innerHTML = g;
+                  	cel4.innerHTML =c;
+                  	cel5.innerHTML =x;
+                  }
+                  if(loc == "DistressArea2" ){
+            
+                  	var newRow = table2.insertRow(table2.rows.length/2+1);
+                  
+                  // add cells to the row
+                  	var cel1 = newRow.insertCell(0);
+                  	var cel2 = newRow.insertCell(1);
+                  	var cel3 = newRow.insertCell(2);
+                  	var cel4 = newRow.insertCell(3);
+                  	var cel5 = newRow.insertCell(4);
+                  // add values to the cells
+                  	cel1.innerHTML = fn;
+                  	cel2.innerHTML = a;
+                  	cel3.innerHTML = g;
+                  	cel4.innerHTML =c;
+                  	cel5.innerHTML=x;
+                  }
+                  if(loc == "DistressArea3" ){
+            
+                  	var newRow = table3.insertRow(table1.rows.length/2+1);
+                  
+                  // add cells to the row
+                  	var cel1 = newRow.insertCell(0);
+                  	var cel2 = newRow.insertCell(1);
+                  	var cel3 = newRow.insertCell(2);
+                  	var cel4 = newRow.insertCell(3);
+                  	var cel5 = newRow.insertCell(4)
+                  
+                  // add values to the cells
+                  	cel1.innerHTML = fn;
+                  	cel2.innerHTML = a;
+                  	cel3.innerHTML = g;
+                  	cel4.innerHTML =c;
+                  	cel5.innerHTML =x;
+                  }
+                  if(loc == "DistressArea4" ){
+            
+                  	var newRow = table4.insertRow(table2.rows.length/2+1);
+                  
+                  // add cells to the row
+                  	var cel1 = newRow.insertCell(0);
+                  	var cel2 = newRow.insertCell(1);
+                  	var cel3 = newRow.insertCell(2);
+                  	var cel4 = newRow.insertCell(3);
+                  	var cel5 = newRow.insertCell(4);
+                  // add values to the cells
+                  	cel1.innerHTML = fn;
+                  	cel2.innerHTML = a;
+                  	cel3.innerHTML = g;
+                  	cel4.innerHTML =c;
+                  	cel5.innerHTML=x;
+                  }
+                  
+
+    });
+});
+}
+</script>
+
+
+
+
+
+	<style type="text/css">
+		table {
+			background-color: #aaaaaa;
+			border-radius: 10%;
+			padding: 5px;
+			border: 2px;
+		}
+		th{
+			width: 24%;
+			padding: 2px;
+			border: 2px solid black;
+		}
+		td{
+			width: 15%;
+			padding: 2px;
+			border: 2px solid black;
+		}
+		.menu2{
+			background-color: #dddddd;
+			width: 65%;
+		}
+
+	</style>
+
+	<script type="text/javascript">
+		function show_dl(){
+			document.getElementById("distress_menu").style.display="block";
+			document.getElementById("volunteers_menu").style.display="none";
+			document.getElementById("rc_level1").style.display="none";
+			document.getElementById("distress_level1").style.display="block";
+			document.getElementById("vol_level1").style.display="none";
+			//document.getElementById("rc_level1").style.display="none";
+			document.getElementById("doctors_menu").style.display="none";
+
+			get_dist();
+		}
+
+		function show_vol(){
+			document.getElementById("volunteers_menu").style.display="block";
+			document.getElementById("distress_menu").style.display="none";
+			//document.getElementById("rc_menu").style.display="none";
+			document.getElementById("distress_level1").style.display="none";
+			document.getElementById("vol_level1").style.display="block";
+			document.getElementById("rc_level1").style.display="none";
+			document.getElementById("doctors_menu").style.display="none";
+			get_vol();
+		}
+
+		function show_rc(){
+			//document.getElementById("rc_menu").style.display="block";
+			document.getElementById("rc_level1").style.display="block";
+			document.getElementById("volunteers_menu").style.display="none";
+			document.getElementById("distress_menu").style.display="none";
+			document.getElementById("distress_level1").style.display="none";
+			document.getElementById("vol_level1").style.display="none";
+			document.getElementById("doctors_menu").style.display="none";
+			get_rc();
+
+		}
+
+		function show_do(){
+			document.getElementById("doctors_menu").style.display="block";
+			document.getElementById("vol_level1").style.display="none";
+			document.getElementById("dist_level1").style.display="none";
+			document.getElementById("rc_menu").style.display="none";
+			document.getElementById("rc_level1").style.display="none";
+
+
+		}
+
+		function vol_area1_fun(){
+			document.getElementById("volunteer_1_tbl").style.display="block";
+			document.getElementById("volunteer_2_tbl").style.display="none";
+			document.getElementById("volunteer_3_tbl").style.display="none";
+			document.getElementById("volunteer_4_tbl").style.display="none";
+
+		}
+		
+		function new_rc(){
+			window.location.replace("new_rc.html");
+		}
+
+		function vol_area2_fun(){
+			document.getElementById("volunteer_2_tbl").style.display="block";
+			document.getElementById("volunteer_1_tbl").style.display="none";
+			document.getElementById("volunteer_3_tbl").style.display="none";
+			document.getElementById("volunteer_4_tbl").style.display="none";
+
+		}
+		function vol_area3_fun(){
+			document.getElementById("volunteer_3_tbl").style.display="block";
+			document.getElementById("volunteer_2_tbl").style.display="none";
+			document.getElementById("volunteer_1_tbl").style.display="none";
+			document.getElementById("volunteer_4_tbl").style.display="none";
+
+		}
+		function vol_area4_fun(){
+			document.getElementById("volunteer_4_tbl").style.display="block";
+			document.getElementById("volunteer_2_tbl").style.display="none";
+			document.getElementById("volunteer_3_tbl").style.display="none";
+			document.getElementById("volunteer_1_tbl").style.display="none";
+
+		}
+
+		function dist_area1_fun(){
+			document.getElementById("dist_1_tbl").style.display="block";
+			document.getElementById("dist_2_tbl").style.display="none";
+			document.getElementById("dist_3_tbl").style.display="none";
+			document.getElementById("dist_4_tbl").style.display="none";
+
+		}
+		function dist_area2_fun(){
+			document.getElementById("dist_2_tbl").style.display="block";
+			document.getElementById("dist_1_tbl").style.display="none";
+			document.getElementById("dist_3_tbl").style.display="none";
+			document.getElementById("dist_4_tbl").style.display="none";
+
+		}
+		function dist_area3_fun(){
+			document.getElementById("dist_3_tbl").style.display="block";
+			document.getElementById("dist_2_tbl").style.display="none";
+			document.getElementById("dist_1_tbl").style.display="none";
+			document.getElementById("dist_4_tbl").style.display="none";
+			
+		}
+		function dist_area4_fun(){
+			document.getElementById("dist_4_tbl").style.display="block";
+			document.getElementById("dist_2_tbl").style.display="none";
+			document.getElementById("dist_3_tbl").style.display="none";
+			document.getElementById("dist_1_tbl").style.display="none";
+		}
+
+	</script>
+
+
+	<title>SAHAJYA</title>
+</head>
+
+
+<body>
+
+	<div id="top menu">
+		<table style="width: 100%">
+			<tr id="main_menu">
+				<th id="distress_level0" onclick="show_dl()">
+					DISTRESS LOCATION
+				</th>
+				<th id="vol_level0" onclick="show_vol()">
+					VOLUNTEERS
+				</th>
+				<th  id="rc_level0" onclick="show_rc()">
+					RELIEF CAMPS
+				</th>
+				<th id="do_level0" onclick="show_do()">
+					DOCTORS ONLINE
+				</th>
+			</tr>
+		</table>
+	</div>
+		<div id="distress_level1">	
+			<table class="menu2" id="distress_menu" style="display: none">
+				<tr>
+				<td onclick="dist_area1_fun()">Mathikere</td>
+				<td onclick="dist_area2_fun()">Yeshwantpur</td>
+				<td onclick="dist_area3_fun()">Yelahanka</td>
+				<td onclick="dist_area4_fun()">Malleshwaram</td>
+				</tr>
+			</table>
+			<div id="distress_level2">
+				<table class="table" id="dist_1_tbl" style="display: none">
+                   	<thead>
+                        <tr>
+                            <th>Emergency</th>
+                            <th>Latitude</th>
+                            <th>Longitude</th>
+                            <th>Contact</th>
+                            <th>Airlift Required</th>
+                        </tr>
+                    </thead>
+                  	<tbody>
+                    </tbody>
+                </table>
+                <table class="table" id="dist_2_tbl" style="display: none">
+                   	<thead>
+                        <tr>
+                            <th>Emergency</th>
+                            <th>Latitude</th>
+                            <th>Longitude</th>
+                            <th>Contact</th>
+                            <th>Airlift Required</th>
+                        </tr>
+                    </thead>
+                  	<tbody>
+                    </tbody>
+                </table>
+                <table class="table" id="dist_3_tbl" style="display: none">
+                   	<thead>
+                        <tr>
+                            <th>Emergency</th>
+                            <th>Latitude</th>
+                            <th>Longitude</th>
+                            <th>Contact</th>
+                            <th>Airlift Required</th>
+                        </tr>
+                    </thead>
+                  	<tbody>
+                    </tbody>
+                </table>
+                <table class="table" id="dist_4_tbl" style="display: none">
+                   	<thead>
+                        <tr>
+                            <th>Emergency</th>
+                            <th>Latitude</th>
+                            <th>Longitude</th>
+                            <th>Contact</th>
+                            <th>Airlift Required</th>
+                        </tr>
+                    </thead>
+                  	<tbody>
+                    </tbody>
+                </table>
+			</div>	
+
+
+		</div>
+		<div id="vol_level1">
+			<table class="menu2" id="volunteers_menu" style="display: none">
+				<tr>
+				<td onclick="vol_area1_fun()">Mathikere</td>
+				<td onclick="vol_area2_fun()">Yeshwantpur</td>
+				<td onclick="vol_area3_fun()">Yelahanka</td>
+				<td onclick="vol_area4_fun()">Malleshwaram</td>
+				</tr>
+			</table>
+			<div id="vol_level2">
+				<table class="table" id="volunteer_1_tbl" style="display: none">
+                   	<thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Gender</th>
+                            <th>Contact</th>
+                        </tr>
+                    </thead>
+                  	<tbody>
+                    </tbody>
+                </table>
+                <table class="table" id="volunteer_2_tbl" style="display: none">
+                   	<thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Gender</th>
+                            <th>Contact</th>
+                        </tr>
+                    </thead>
+                  	<tbody>
+                    </tbody>
+                </table>
+                <table class="table" id="volunteer_3_tbl" style="display: none">
+                   	<thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Gender</th>
+                            <th>Contact</th>
+                        </tr>
+                    </thead>
+                  	<tbody>
+                    </tbody>
+                </table>
+                <table class="table" id="volunteer_4_tbl" style="display: none">
+                   	<thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Gender</th>
+                            <th>Contact</th>
+                        </tr>
+                    </thead>
+                  	<tbody>
+                    </tbody>
+                </table>
+
+			</div>
+		</div>
+		<div id="rc_level1" style="display: none;">
+			<table class="menu2" id="rc_menu">
+				<thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Latitude</th>
+                            <th>Longitude</th>
+                            <th>Contact</th>
+                        </tr>
+                    </thead>
+                  	<tbody>
+                    </tbody>
+			</table>
+			<div id="add_rc" style="float: right;">
+				<input type="button" onclick="new_rc()" value="ADD NEW RELIEF CAMP">
+			</div>
+			
+		</div>
+	<div id="doctors_menu" style="display: none;">
+		<div id="menu4" class="tab-pane fade">
+            <center>
+            <h3>DOCTORS</h3>
+            
+            <div class="row" style="margin:20px;">
+                
+                        <div class="card" style="width:400px;border:2px solid black;">
+                                <img class="card-img-top" src="img_avatar1.png" alt="Card image">
+                                <div class="card-body">
+                                  <h4 class="card-title">NAAM</h4>
+                                  <p class="card-text">TYPE OF DOCTOR</p>
+                                  <p class="card-text">Licence Number : 5905876239046728397</p>
+                                  <p class="card-text">MBBS and other qualifications</p>
+                                  <p class="card-text">Mobile nUmber</p>
+                        </div></div>
+                       
+
+                		<div class="card" style="width:400px;border:2px solid black;">
+                                <img class="card-img-top" src="img_avatar1.png" alt="Card image">
+                                <div class="card-body">
+                                  <h4 class="card-title">NAAM</h4>
+                                  <p class="card-text">TYPE OF DOCTOR</p>
+                                  <p class="card-text">Licence Number : 5905876239046728397</p>
+                                  <p class="card-text">MBBS and other qualifications</p>
+                                  <p class="card-text">Mobile nUmber</p>
+                        </div></div>
+                        <div class="card" style="width:400px;border:2px solid black;">
+                                    <img class="card-img-top" src="img_avatar1.png" alt="Card image">
+                                    <div class="card-body">
+                                      <h4 class="card-title">NAAM</h4>
+                                      <p class="card-text">TYPE OF DOCTOR</p>
+                                      <p class="card-text">Licence Number : 5905876239046728397</p>
+                                      <p class="card-text">MBBS and other qualifications</p>
+                                      <p class="card-text">Mobile nUmber</p>
+                                    </div>
+                    </div>
+    
+                    <div class="card" style="width:400px;border:2px solid black;">
+                                    <img class="card-img-top" src="img_avatar1.png" alt="Card image">
+                                    <div class="card-body">
+                                      <h4 class="card-title">NAAM</h4>
+                                      <p class="card-text">TYPE OF DOCTOR</p>
+                                      <p class="card-text">Licence Number : 5905876239046728397</p>
+                                      <p class="card-text">MBBS and other qualifications</p>
+                                      <p class="card-text">Mobile nUmber</p>
+                                    </div>
+                            </div>
+                    </div>
+    		</center>
+
+                </div>
+            </div>
+
+
+</body>
+</html>
+
+ 
